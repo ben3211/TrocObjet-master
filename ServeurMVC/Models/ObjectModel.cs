@@ -2,7 +2,7 @@ using System.Text.Json.Serialization;
 public class ObjectModel
 {
     [JsonPropertyName("id")]
-    public Guid IdObject { get; set; } = Guid.NewGuid();
+    public Guid IdObject { get; set; }
 
     [JsonPropertyName("ow")]
     public AppUserDAO? Owner { get; set; }

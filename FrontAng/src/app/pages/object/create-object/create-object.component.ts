@@ -18,10 +18,11 @@ export class CreateObjectComponent implements OnInit {
   // valeurs initiales du formulaire
   Date = Date;
   errorMessage?: string;
-  editValue: { label: string, description: string,estimatedPrice:string } = {
+  editValue: { label: string, description: string, estimatedPrice:string, photoUrl:[] } = {
     label: "",
     description: "",
-    estimatedPrice:""
+    estimatedPrice:"",
+    photoUrl:[]
   }
 
   ngOnInit() {
@@ -34,10 +35,11 @@ export class CreateObjectComponent implements OnInit {
       var o = new Object(this.editValue.label);
       o.description = this.editValue.description;
       o.estimatedPrice= +this.editValue.estimatedPrice;
+      o.photos=this.editValue.photoUrl;
       // sauvegarde du l'object
       try {
         var id=await this.objectService.saveItemAsync(o);
-        this.router.navigateByUrl("/objet");
+        this.router.navigateByUrl("/object");
 
       } catch (error) {
         this.errorMessage="L'objet ne peut être sauvegardé maintenant";
@@ -47,6 +49,4 @@ export class CreateObjectComponent implements OnInit {
       this.errorMessage = "Le métier ne permet pas de créer l'objet";
     }
   }
-
-
 }

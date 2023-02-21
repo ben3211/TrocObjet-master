@@ -23,6 +23,21 @@ export class EditObjectComponent implements OnInit {
   editValue?: { label: string, description: string, estimatedPrice: number };
   idObject?: Guid;
 
+
+
+  ngOnInit() {
+    this.activatedRoute.params.subscribe(async params => {
+      var id = params["id"];
+      this.idObject = Guid.parse(id);
+      this.object = await this.objectService.getItemAsync(id);
+      this.editValue = {
+        label: this.object.label,
+        description: this.object.description,
+        estimatedPrice: this.object.estimatedPrice
+      }
+    });
+  }
+
   async updateObject() {
     try {
       // Tentative de modification des valeurs de l'object
@@ -40,18 +55,5 @@ export class EditObjectComponent implements OnInit {
       this.errorMessage = "Le métier ne permet pas d'éditer l'objet";
     }
   }
-
-  ngOnInit() {
-    this.activatedRoute.params.subscribe(async params => {
-      var id = params["id"];
-      this.idObject = Guid.parse(id);
-      this.object = await this.objectService.getItemAsync(id);
-      this.editValue = {
-        label: this.object.label,
-        description: this.object.description,
-        estimatedPrice:this.object.estimatedPrice
-      }
-
-    })
-  }
 }
+

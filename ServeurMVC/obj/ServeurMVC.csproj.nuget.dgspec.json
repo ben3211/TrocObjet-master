@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\IB\\Desktop\\Projets\\TrocTout\\ServeurMVC\\ServeurMVC.csproj": {}
+    "C:\\Users\\IB\\Desktop\\Projets\\TrocObjet-master-1\\ServeurMVC\\ServeurMVC.csproj": {}
   },
   "projects": {
-    "C:\\Users\\IB\\Desktop\\Projets\\TrocTout\\DAL\\DAL.csproj": {
+    "C:\\Users\\IB\\Desktop\\Projets\\TrocObjet-master-1\\DAL\\DAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\IB\\Desktop\\Projets\\TrocTout\\DAL\\DAL.csproj",
+        "projectUniqueName": "C:\\Users\\IB\\Desktop\\Projets\\TrocObjet-master-1\\DAL\\DAL.csproj",
         "projectName": "DAL",
-        "projectPath": "C:\\Users\\IB\\Desktop\\Projets\\TrocTout\\DAL\\DAL.csproj",
+        "projectPath": "C:\\Users\\IB\\Desktop\\Projets\\TrocObjet-master-1\\DAL\\DAL.csproj",
         "packagesPath": "C:\\Users\\IB\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\IB\\Desktop\\Projets\\TrocTout\\DAL\\obj\\",
+        "outputPath": "C:\\Users\\IB\\Desktop\\Projets\\TrocObjet-master-1\\DAL\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -70,14 +70,14 @@
         }
       }
     },
-    "C:\\Users\\IB\\Desktop\\Projets\\TrocTout\\ServeurMVC\\ServeurMVC.csproj": {
+    "C:\\Users\\IB\\Desktop\\Projets\\TrocObjet-master-1\\ServeurMVC\\ServeurMVC.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\IB\\Desktop\\Projets\\TrocTout\\ServeurMVC\\ServeurMVC.csproj",
+        "projectUniqueName": "C:\\Users\\IB\\Desktop\\Projets\\TrocObjet-master-1\\ServeurMVC\\ServeurMVC.csproj",
         "projectName": "ServeurMVC",
-        "projectPath": "C:\\Users\\IB\\Desktop\\Projets\\TrocTout\\ServeurMVC\\ServeurMVC.csproj",
+        "projectPath": "C:\\Users\\IB\\Desktop\\Projets\\TrocObjet-master-1\\ServeurMVC\\ServeurMVC.csproj",
         "packagesPath": "C:\\Users\\IB\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\IB\\Desktop\\Projets\\TrocTout\\ServeurMVC\\obj\\",
+        "outputPath": "C:\\Users\\IB\\Desktop\\Projets\\TrocObjet-master-1\\ServeurMVC\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -99,8 +99,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\IB\\Desktop\\Projets\\TrocTout\\DAL\\DAL.csproj": {
-                "projectPath": "C:\\Users\\IB\\Desktop\\Projets\\TrocTout\\DAL\\DAL.csproj"
+              "C:\\Users\\IB\\Desktop\\Projets\\TrocObjet-master-1\\DAL\\DAL.csproj": {
+                "projectPath": "C:\\Users\\IB\\Desktop\\Projets\\TrocObjet-master-1\\DAL\\DAL.csproj"
               }
             }
           }

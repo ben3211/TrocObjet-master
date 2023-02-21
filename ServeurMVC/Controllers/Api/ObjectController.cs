@@ -43,11 +43,11 @@ public class ObjectController : Controller
         // var dao = db.Objects.Find(id);
         var dao = db.Objects.Include(c => c.Photos).FirstOrDefault(c => c.IdObject == id);
         var model=mapper.Map<ObjectModel>(dao);
-        model.Photos = dao.Photos?.Select(p => new PhotoDAO { Path = p.Path }).ToList();
+        //model.Photos = dao.Photos?.Select(p => new PhotoDAO { Path = p.Path }).ToList();
         return model;
     }
 
-    
+    // POST : http://localhost:5088/api/object
     [HttpPost]
     public async Task<object> PostObject([FromBody]ObjectModel postObject){
         if(!ModelState.IsValid){
@@ -55,10 +55,37 @@ public class ObjectController : Controller
             return BadRequest();
         }
         var dao = mapper.Map<ObjectDAO>(postObject);
-        dao.IdOwner = Guid.Parse("A0D08C5D-FA86-4246-983F-0DFFBED13C3D");// Mis en attendant l'authentification
+        dao.IdObject = Guid.NewGuid();
+        dao.IdOwner = Guid.Parse("D6726FD9-ED2D-44D3-90B9-DCFEFF1E3B75");// Mis en attendant l'authentification
         db.Objects.Add(dao);
         await db.SaveChangesAsync();
         return Ok(true);
     }
 
+    // DELETE :  http://localhost:5088/api/object/id
+    [HttpDelete("{id:guid}")]
+    public async Task<object> DeleteObject(Guid id){
+        var dao = db.Objects.Find(id);
+        if (dao == null) {
+            return NotFound();
+        }
+        db.Objects.Remove(dao);
+        await db.SaveChangesAsync();
+        return Ok (true);
+    }
+
+    // PUT: api/object/{id}
+    [HttpPut("{id:guid}")]
+    public async Task<object> PutObject(Guid id, [FromBody]ObjectModel putObject) {
+             if(!ModelState.IsValid){
+            var messagesErreur = ModelState.SelectMany(c=>c.Value.Errors).Select(c=>c.ErrorMessage).ToArray();
+            return BadRequest();
+        }
+        var dao = mapper.Map<ObjectDAO>(putObject);
+        dao.IdOwner = Guid.Parse("D6726FD9-ED2D-44D3-90B9-DCFEFF1E3B75");// Mis en attendant l'authentification
+        db.Objects.Add(dao);
+        await db.SaveChangesAsync();
+        return Ok(true);
+        
+    }
 }

@@ -29,6 +29,11 @@
         <!-- <validation-message class="invalid-feedback" [model]="dureeModel"></validation-message> -->
     </div>
 
-    <button [disabled]="formModel.invalid || formModel.pristine" class="btn btn-warning">Créer</button>
+    <!-- <div class="form-group">
+        <label>{{photoUrlModel.name | titlecase}}</label>
+        <input class="form-control" #photoUrlModel="ngModel" type="text" [(ngModel)]="editValue.photoUrl" name="photos url">
+    </div> -->
 
+    <button class="btn btn-warning">Créer</button>
+    <!-- [disabled]="formModel.invalid || formModel.pristine" -->
 </form>

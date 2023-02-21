@@ -22,7 +22,9 @@ export class ObjectHttpService implements objectService {
         var dto = {
             "id": guid.toString(),
             "l": item.label,
-            "d": item.description
+            "d": item.description,
+            "ep": item.estimatedPrice
+
         };
         var requete = this.httpClient.post(`http://localhost:5088/api/Object`, dto);
         var promesse = lastValueFrom(requete);
@@ -30,13 +32,29 @@ export class ObjectHttpService implements objectService {
         return guid;
     }
 
-    deleteItemAsync(id: Guid): Promise<void> {
-        throw new Error("Method not implemented.");
+    async deleteItemAsync(id: Guid): Promise<void> {
+        var requete = this.httpClient.delete(`http://localhost:5088/api/Object/${id.toString()}`);
+        var promesse = lastValueFrom(requete);
+
+        var resultatPromesse = await promesse as boolean;
+
+        // await this.httpClient.delete(`http://localhost:5088/api/Object/${id.toString()}`).toPromise();
     }
 
     updateItemAsync(id: Guid, item: Object): Promise<void> {
-        throw new Error("Method not implemented.");
+        var dto = {
+            "id": id.toString(),
+            "l": item.label,
+            "d": item.description,
+            "ep": item.estimatedPrice
+        };
+        var o = this.httpClient.put(`http://localhost:5088/api/Object/${id.toString()}`, dto);
+        if (!o) {
+            return Promise.reject(new Error("Objet non trouvé"));
+        };
+        return Promise.resolve();
     }
+
 
     async getItemAsync(id: Guid): Promise<Object> {
         var requete = this.httpClient.get(`http://localhost:5088/api/Object/${id.toString()}`);
