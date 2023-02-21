@@ -1,0 +1,34 @@
+<h3 pageTitle>Création d'objets</h3>
+<div *ngIf="errorMessage" class="alert alert-danger">{{errorMessage}}</div>
+
+<form #formModel="ngForm" (ngSubmit)="createObject()">
+
+    <div class="form-group">
+        <label>{{titreModel.name | titlecase}}</label>
+        <!-- [(ngModel)] : syntaxe qui permet la liaison dans les deux sens-->
+        <input class="form-control" #titreModel="ngModel" type="text" [(ngModel)]="editValue.label" name="label"
+            required maxlength="50" minlength="2" pattern="[A-Z].*">
+
+        <!-- <validation-message class="invalid-feedback" [model]="titreModel"
+            patternMessage="Le {0} doit commencer par une majuscule"></validation-message> -->
+    </div>
+
+    <div class="form-group">
+        <label>{{descriptionModel.name | titlecase}}</label>
+        <!-- [(ngModel)] : syntaxe qui permet la liaison dans les deux sens-->
+        <input class="form-control" #descriptionModel="ngModel" type="text" [(ngModel)]="editValue.description"
+            name="description">
+        <!-- <validation-message class="invalid-feedback" [model]="dateSortieModel"></validation-message> -->
+    </div>
+
+    <div class="form-group">
+        <label>{{estimatedPriceModel.name | titlecase}}</label>
+        <!-- [(ngModel)] : syntaxe qui permet la liaison dans les deux sens-->
+        <input class="form-control" #estimatedPriceModel="ngModel" type="number" [(ngModel)]="editValue.estimatedPrice" name="estimated price"
+            min="1" max="1000">
+        <!-- <validation-message class="invalid-feedback" [model]="dureeModel"></validation-message> -->
+    </div>
+
+    <button [disabled]="formModel.invalid || formModel.pristine" class="btn btn-warning">Créer</button>
+
+</form>

@@ -1,0 +1,21 @@
+@model ObjectModel
+
+<h3>Détails de l'object @Model.Label</h3>
+
+<div class="form-group">
+  <div class="form-control">@Html.DisplayFor(c=>c.Description)
+    @* @Html.DisplayFor(c=>c.EstimatedPrice)€ *@
+  </div>
+  <div class="form-control">
+    Prix estimé: @Html.DisplayFor(c=>c.EstimatedPrice)€
+  </div>
+  <div class="form-control">
+    <a href="/User/Details/@Model.Owner.IdUser"> @Model.Owner.LastName</a>
+  </div>
+  @foreach (var photo in Model.Photos)
+
+  {
+    <img src="@photo.Path" alt="Photo" style="max-width: 200px; max-height: 200px; margin: 5px;">
+  }
+
+</div>

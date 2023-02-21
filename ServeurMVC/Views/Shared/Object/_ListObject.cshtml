@@ -1,0 +1,18 @@
+@model IEnumerable<ObjectModel>
+
+<div class = "List-group" >
+    @foreach (var o in Model)
+    
+    {   
+
+        <a class="list-group-item list-group-item-action" href="/Object/Details/@o.IdObject">@o.Description
+        @o.Label
+        </a>
+        @* <a class="list-group-item list-group-item-action" 
+        asp-controller="User"
+        asp-route-itemid="@u.IdUser"
+        
+        >@Html.DisplayFor(c=>u.LastName)
+        @Html.DisplayFor(c=>u.FirstName)</a> *@
+    }
+</div>

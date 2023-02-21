@@ -1,0 +1,30 @@
+@model UserModel;
+
+    <h3>Detail de l'utilisateur @Model.FirstName</h3>
+    <div class="form-group">
+        <label>Nom</label>
+        <div class="form-control">@Model.LastName</div>
+    </div>
+    <div class="form-group">
+        <label>Ville</label>
+        <div class="form-control">@Model.City</div>
+    </div>
+        <div class="form-group">
+        <label>Tel</label>
+        <div class="form-control">@Model.PhoneNumber</div>
+    </div>
+    <hr>
+    <h3>Liste des objets</h3>
+    <div class="List-group">
+       <h5> Nombre d'objets : @Model.Objects.Count()</h5>
+         @foreach (var o in Model.Objects)
+    {
+       
+        <a class="list-group-item list-group-item-action" href="/Object/Details/@o.IdObject">@o.Label</a>
+    }
+    </div>
+
+
+       
+  
+</div>

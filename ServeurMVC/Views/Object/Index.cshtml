@@ -1,0 +1,11 @@
+@model IEnumerable<ObjectModel>
+
+<h3>Liste des objects</h3>
+@Model.Count()
+<div class="List-group">
+    @foreach (var o in Model)
+    {
+        <a class="list-group-item list-group-item-action" href="/Object/Details/@o.IdObject">@o.Label</a>
+    }
+</div>
+

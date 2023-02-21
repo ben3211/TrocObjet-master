@@ -1,0 +1,6 @@
+@model IEnumerable<UserModel>
+
+<h3>Liste des Utilisateurs</h3>
+@Model.Count()
+
+<partial name="User/_ListUser" for="@Model"></partial>

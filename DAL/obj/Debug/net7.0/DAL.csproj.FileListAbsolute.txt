@@ -1,0 +1,60 @@
+C:\Users\IB\Desktop\Projets\TrocTout\TrocTout\DAL\bin\Debug\net7.0\DAL.deps.json
+C:\Users\IB\Desktop\Projets\TrocTout\TrocTout\DAL\bin\Debug\net7.0\DAL.dll
+C:\Users\IB\Desktop\Projets\TrocTout\TrocTout\DAL\bin\Debug\net7.0\DAL.pdb
+C:\Users\IB\Desktop\Projets\TrocTout\TrocTout\DAL\obj\Debug\net7.0\DAL.csproj.AssemblyReference.cache
+C:\Users\IB\Desktop\Projets\TrocTout\TrocTout\DAL\obj\Debug\net7.0\DAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\IB\Desktop\Projets\TrocTout\TrocTout\DAL\obj\Debug\net7.0\DAL.AssemblyInfoInputs.cache
+C:\Users\IB\Desktop\Projets\TrocTout\TrocTout\DAL\obj\Debug\net7.0\DAL.AssemblyInfo.cs
+C:\Users\IB\Desktop\Projets\TrocTout\TrocTout\DAL\obj\Debug\net7.0\DAL.csproj.CoreCompileInputs.cache
+C:\Users\IB\Desktop\Projets\TrocTout\TrocTout\DAL\obj\Debug\net7.0\DAL.dll
+C:\Users\IB\Desktop\Projets\TrocTout\TrocTout\DAL\obj\Debug\net7.0\refint\DAL.dll
+C:\Users\IB\Desktop\Projets\TrocTout\TrocTout\DAL\obj\Debug\net7.0\DAL.pdb
+C:\Users\IB\Desktop\Projets\TrocTout\TrocTout\DAL\obj\Debug\net7.0\ref\DAL.dll
+C:\Users\user\Desktop\TrocTout-main (2)\TrocTout-main\DAL\bin\Debug\net7.0\DAL.deps.json
+C:\Users\user\Desktop\TrocTout-main (2)\TrocTout-main\DAL\bin\Debug\net7.0\DAL.dll
+C:\Users\user\Desktop\TrocTout-main (2)\TrocTout-main\DAL\bin\Debug\net7.0\DAL.pdb
+C:\Users\user\Desktop\TrocTout-main (2)\TrocTout-main\DAL\obj\Debug\net7.0\DAL.csproj.AssemblyReference.cache
+C:\Users\user\Desktop\TrocTout-main (2)\TrocTout-main\DAL\obj\Debug\net7.0\DAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\Desktop\TrocTout-main (2)\TrocTout-main\DAL\obj\Debug\net7.0\DAL.AssemblyInfoInputs.cache
+C:\Users\user\Desktop\TrocTout-main (2)\TrocTout-main\DAL\obj\Debug\net7.0\DAL.AssemblyInfo.cs
+C:\Users\user\Desktop\TrocTout-main (2)\TrocTout-main\DAL\obj\Debug\net7.0\DAL.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\TrocTout-main (2)\TrocTout-main\DAL\obj\Debug\net7.0\DAL.dll
+C:\Users\user\Desktop\TrocTout-main (2)\TrocTout-main\DAL\obj\Debug\net7.0\refint\DAL.dll
+C:\Users\user\Desktop\TrocTout-main (2)\TrocTout-main\DAL\obj\Debug\net7.0\DAL.pdb
+C:\Users\user\Desktop\TrocTout-main (2)\TrocTout-main\DAL\obj\Debug\net7.0\ref\DAL.dll
+C:\Users\user\Desktop\TrocObjet\TrocObjet\DAL\bin\Debug\net7.0\DAL.deps.json
+C:\Users\user\Desktop\TrocObjet\TrocObjet\DAL\bin\Debug\net7.0\DAL.dll
+C:\Users\user\Desktop\TrocObjet\TrocObjet\DAL\bin\Debug\net7.0\DAL.pdb
+C:\Users\user\Desktop\TrocObjet\TrocObjet\DAL\obj\Debug\net7.0\DAL.csproj.AssemblyReference.cache
+C:\Users\user\Desktop\TrocObjet\TrocObjet\DAL\obj\Debug\net7.0\DAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\Desktop\TrocObjet\TrocObjet\DAL\obj\Debug\net7.0\DAL.AssemblyInfoInputs.cache
+C:\Users\user\Desktop\TrocObjet\TrocObjet\DAL\obj\Debug\net7.0\DAL.AssemblyInfo.cs
+C:\Users\user\Desktop\TrocObjet\TrocObjet\DAL\obj\Debug\net7.0\DAL.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\TrocObjet\TrocObjet\DAL\obj\Debug\net7.0\DAL.dll
+C:\Users\user\Desktop\TrocObjet\TrocObjet\DAL\obj\Debug\net7.0\refint\DAL.dll
+C:\Users\user\Desktop\TrocObjet\TrocObjet\DAL\obj\Debug\net7.0\DAL.pdb
+C:\Users\user\Desktop\TrocObjet\TrocObjet\DAL\obj\Debug\net7.0\ref\DAL.dll
+C:\Users\IB\Desktop\Projet trocobjet\TrocObjet-1\DAL\bin\Debug\net7.0\DAL.deps.json
+C:\Users\IB\Desktop\Projet trocobjet\TrocObjet-1\DAL\bin\Debug\net7.0\DAL.dll
+C:\Users\IB\Desktop\Projet trocobjet\TrocObjet-1\DAL\bin\Debug\net7.0\DAL.pdb
+C:\Users\IB\Desktop\Projet trocobjet\TrocObjet-1\DAL\obj\Debug\net7.0\DAL.csproj.AssemblyReference.cache
+C:\Users\IB\Desktop\Projet trocobjet\TrocObjet-1\DAL\obj\Debug\net7.0\DAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\IB\Desktop\Projet trocobjet\TrocObjet-1\DAL\obj\Debug\net7.0\DAL.AssemblyInfoInputs.cache
+C:\Users\IB\Desktop\Projet trocobjet\TrocObjet-1\DAL\obj\Debug\net7.0\DAL.AssemblyInfo.cs
+C:\Users\IB\Desktop\Projet trocobjet\TrocObjet-1\DAL\obj\Debug\net7.0\DAL.csproj.CoreCompileInputs.cache
+C:\Users\IB\Desktop\Projet trocobjet\TrocObjet-1\DAL\obj\Debug\net7.0\DAL.dll
+C:\Users\IB\Desktop\Projet trocobjet\TrocObjet-1\DAL\obj\Debug\net7.0\refint\DAL.dll
+C:\Users\IB\Desktop\Projet trocobjet\TrocObjet-1\DAL\obj\Debug\net7.0\DAL.pdb
+C:\Users\IB\Desktop\Projet trocobjet\TrocObjet-1\DAL\obj\Debug\net7.0\ref\DAL.dll
+C:\Users\IB\Desktop\Projets\TrocTout\DAL\bin\Debug\net7.0\DAL.deps.json
+C:\Users\IB\Desktop\Projets\TrocTout\DAL\bin\Debug\net7.0\DAL.dll
+C:\Users\IB\Desktop\Projets\TrocTout\DAL\bin\Debug\net7.0\DAL.pdb
+C:\Users\IB\Desktop\Projets\TrocTout\DAL\obj\Debug\net7.0\DAL.csproj.AssemblyReference.cache
+C:\Users\IB\Desktop\Projets\TrocTout\DAL\obj\Debug\net7.0\DAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\IB\Desktop\Projets\TrocTout\DAL\obj\Debug\net7.0\DAL.AssemblyInfoInputs.cache
+C:\Users\IB\Desktop\Projets\TrocTout\DAL\obj\Debug\net7.0\DAL.AssemblyInfo.cs
+C:\Users\IB\Desktop\Projets\TrocTout\DAL\obj\Debug\net7.0\DAL.csproj.CoreCompileInputs.cache
+C:\Users\IB\Desktop\Projets\TrocTout\DAL\obj\Debug\net7.0\DAL.dll
+C:\Users\IB\Desktop\Projets\TrocTout\DAL\obj\Debug\net7.0\refint\DAL.dll
+C:\Users\IB\Desktop\Projets\TrocTout\DAL\obj\Debug\net7.0\DAL.pdb
+C:\Users\IB\Desktop\Projets\TrocTout\DAL\obj\Debug\net7.0\ref\DAL.dll

@@ -1,0 +1,17 @@
+<!-- à terminer -->
+
+<div *ngIf="editValue">
+    <h3 pageTitle>Edition de l'objet : {{editValue.label}}</h3>
+    <div *ngIf="errorMessage" class="alert alert-danger">{{errorMessage}}</div>
+    {{editValue | json}}
+    <form #formModel="ngForm" (ngSubmit)="updateObject()">
+        <div class="form-group">
+            <label>{{titreModel.name | titlecase}}</label>
+
+            <input class="form-control" #titreModel="ngModel" type="text" [(ngModel)]="editValue.label" name="label"
+                required maxlength="50" minlength="2" pattern="[A-Z].*">
+            <!-- <validation-message class="invalid-feedback" [model]="titreModel"
+                patternMessage="Le {0} doit commencer par une majuscule"></validation-message> -->
+        </div>
+    </form>
+</div>

@@ -1,0 +1,11 @@
+<div *ngIf="object">
+    <h3>Object : {{object.label}}</h3>
+    <div class="form-group">
+        <label class="form-label">Description de l'objet</label>
+        <div class="form-control">{{object.description}}</div>
+    </div>
+
+    <div *ngFor="let photo of object?.photos">
+        <img src="{{ photo }}" alt="Photo" style="max-width: 200px; max-height: 200px; margin: 5px;">
+      </div>
+</div>
