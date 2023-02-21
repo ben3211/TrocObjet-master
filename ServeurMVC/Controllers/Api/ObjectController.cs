@@ -82,7 +82,7 @@ public class ObjectController : Controller
             return BadRequest();
         }
         var dao = mapper.Map<ObjectDAO>(putObject);
-        dao.IdOwner = Guid.Parse("D6726FD9-ED2D-44D3-90B9-DCFEFF1E3B75");// Mis en attendant l'authentification
+        dao.IdOwner = Guid.Parse("07C137A3-4D46-432B-BCE3-11F6D8761372");// Mis en attendant l'authentification
         db.Objects.Add(dao);
         await db.SaveChangesAsync();
         return Ok(true);
