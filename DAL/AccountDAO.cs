@@ -8,6 +8,6 @@ public class AccountDAO : IdentityUser<Guid>
         // this.PasswordHash=PasswordHash;
     }
 
-    public AppUserDAO? AppUser { get; set; }
+    // public AppUserDAO? AppUser { get; set; }
     
 }

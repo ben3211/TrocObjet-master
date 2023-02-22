@@ -13,6 +13,7 @@ import { EditObjectComponent } from './pages/object/edit-object/edit-object.comp
 import { CreateObjectComponent } from './pages/object/create-object/create-object.component';
 import { ObjectHttpService } from './models/object-http.service';
 import { objectService } from './models/object.service';
+import { AuthenticationComponent } from './pages/Auth/authentication/authentication.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { objectService } from './models/object.service';
     DetailsObjectComponent,
     ListSearchResultComponent,
     EditObjectComponent,
-    CreateObjectComponent
+    CreateObjectComponent,
+    AuthenticationComponent
   ],
   imports: [
     FormsModule,

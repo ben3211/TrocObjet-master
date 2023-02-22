@@ -7,22 +7,6 @@
 
     <button (click)="deleteItemAsync()">Supprimer</button>
     <button (click)="editPage()">Modifier</button>
-    <!-- <button routerLink="/edit-object/{{guid}}">Modifier</button> -->
-    <!-- <button (searchResultClick)="editObject($event)">Modifier</button> -->
-    <a href="/object/edit-object"> Modifier</a>
-    <!-- <a routerLink="/edit-object/{{obj}}">Modifier</a> -->
-
-    <!-- <div class="form-group">
-        <label>{{photoUrlModel.name | titlecase}}</label>
-        <input class="form-control" #photoUrlModel="ngModel" type="text" [(ngModel)]="editValue.photoUrl"
-            name="photos url">
-    </div>
-
-    <button class="btn btn-warning">Créer</button>
-
-    <div *ngFor="let photo of object?.photos">
-        <img src="{{ photo }}" alt="Photo" style="max-width: 200px; max-height: 200px; margin: 5px;">
-    </div> -->
     
     <img *ngFor="let idPhoto of object.photos" src="http://localhost:5088/api/object/photo/{{idPhoto}}"/>
 </div>

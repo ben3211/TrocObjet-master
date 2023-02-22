@@ -43,7 +43,7 @@ public class MaDal : IdentityDbContext<AccountDAO, RoleDAO, Guid>
             entity.HasKey(c => c.IdUser);
             entity.HasMany(c => c.Objects).WithOne(c => c.Owner).HasForeignKey(c => c.IdOwner);
             entity.HasMany(c => c.Loans).WithOne(c => c.Borrower).HasForeignKey(c => c.IdBorrower);
-            entity.HasOne(c => c.Account).WithOne(c => c.AppUser).HasForeignKey<AppUserDAO>(c => c.IdUser);// HasForeignKey(c=>c.IdUser) ne fonctionne pas
+            //entity.HasOne(c => c.Account).WithOne(c => c.AppUser).HasForeignKey<AppUserDAO>(c => c.IdUser);// HasForeignKey(c=>c.IdUser) ne fonctionne pas
 
         });
 

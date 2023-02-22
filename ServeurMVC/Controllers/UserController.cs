@@ -14,17 +14,24 @@ public class UserController : Controller
         this.mapper = mapper;
     }
 
-    public IActionResult Index()
+    //GET /User
+    public IActionResult Index(string searchText)
     {
-        var daos = db.AppUsers;
-     var userModels = mapper.Map<IEnumerable<UserModel>>(daos);
+        if (searchText == null)
+        {
+            searchText = "";
+        }
+        var daos = db.AppUsers.Where(c => c.FirstName.Contains(searchText));
+        var userModels = mapper.Map<IEnumerable<UserModel>>(daos);
         return View(userModels);
     }
 
     // GET /details/fb525db2-a351-46b6-8f38-4f8f9eecad5a
-    public IActionResult Details(Guid id) {
-        var user = db.AppUsers.Include(c=>c.Objects).FirstOrDefault(c=>c.IdUser == id);
-        if (user == null) {
+    public IActionResult Details(Guid id)
+    {
+        var user = db.AppUsers.Include(c => c.Objects).FirstOrDefault(c => c.IdUser == id);
+        if (user == null)
+        {
             return RedirectToAction("index");
         }
         var modelUser = mapper.Map<UserModel>(user);
@@ -39,15 +46,15 @@ public class UserController : Controller
 
 
 
-    // [Authorize(Roles="admin")]
-    // public IActionResult Delete(Guid id)
-    // {
-    //     var dao = db.Users.Find(id);
-    //     if (dao == null)
-    //     {
-    //         return RedirectToAction("index");
-    //     }
-    //     var idUser = dao.Id;
-    //     db.Users.Remove(dao);
-    //     return RedirectToAction("index");
-    // }
+// [Authorize(Roles="admin")]
+// public IActionResult Delete(Guid id)
+// {
+//     var dao = db.Users.Find(id);
+//     if (dao == null)
+//     {
+//         return RedirectToAction("index");
+//     }
+//     var idUser = dao.Id;
+//     db.Users.Remove(dao);
+//     return RedirectToAction("index");
+// }

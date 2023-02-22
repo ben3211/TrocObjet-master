@@ -2,7 +2,7 @@ public class AppUserDAO{
 
     public Guid IdUser { get; set; }
 
-    public AccountDAO Account{get;set;}
+    // public AccountDAO Account{get;set;}
 
 
     public string LastName{get;set;}
