@@ -42,7 +42,7 @@ public class ObjectController : Controller
     public object GetObject(Guid id)
     {
         // var dao = db.Objects.Find(id);
-        var dao = db.Objects.FirstOrDefault(c => c.IdObject == id);
+        var dao = db.Objects.Include(c=>c.Photos).FirstOrDefault(c => c.IdObject == id);
         var model = mapper.Map<ObjectModel>(dao);
         //model.Photos = dao.Photos?.Select(p => new PhotoDAO { Path = p.Path }).ToList();
         return model;
@@ -59,7 +59,9 @@ public class ObjectController : Controller
         }
         var dao = mapper.Map<ObjectDAO>(postObject);
         dao.IdObject = Guid.NewGuid();
-        dao.IdOwner = Guid.Parse("D6726FD9-ED2D-44D3-90B9-DCFEFF1E3B75");// Mis en attendant l'authentification
+        //////////////////////////////////////////////////////////////////////////// A changer 
+        dao.IdOwner = Guid.Parse("D5E5432E-7EB4-47A8-86FD-CB329EA21261");// Mis en attendant l'authentification
+        ////////////////////////////////////////////////////////////////////////////
         db.Objects.Add(dao);
         await db.SaveChangesAsync();
         return Ok(true);
@@ -141,4 +143,42 @@ public class ObjectController : Controller
     {
         return db.Objects.Any(e => e.IdObject == id);
     }
+    // Réception de l'affiche
+
+    // Object/876868/Photo?commentaire=le commentaire
+    [HttpPost("{id:guid}/photo")]
+    public IActionResult PostPhoto(Guid id, String commentaire, ICollection<IFormFile>  files){
+        if(files.Count()>0){
+            var stream=files.First().OpenReadStream();
+            var length=stream.Length;
+            var reader=new BinaryReader(stream);
+
+            var obj=db.Objects.Find(id);
+            var photo=new PhotoDAO();
+            photo.IdObject=id;
+            photo.Commentaire=commentaire;
+            photo.Bytes=reader.ReadBytes((int)length);
+            db.Photos.Add(photo);
+            db.SaveChanges();
+        } 
+        // Redirection vers le details
+        return RedirectToAction("Details", new{ id=id});
+    }
+
+    // GET : /Object/Photo/e5885733-81b9-4f51-aa4e-22ef6c02a228
+    [HttpGet("photo/{id}")]
+    public IActionResult GetPhoto(Guid id){
+        var photo=db.Photos.Find(id);
+        if(photo!=null && photo.Bytes!=null){
+            // FileContentResult => renvoit un fichier
+            // image/jpg => type de fichier => mime type
+            // application/pdf
+            // applcation/docx
+            return new FileContentResult(photo.Bytes,"image/jpg");
+        }
+        return NotFound();
+    }
 }
+
+
+    

@@ -14,9 +14,11 @@ public class ObjectModel
 
     [JsonPropertyName("ep")]
     public decimal EstimatedPrice { get; set; }
+
+    
     [JsonPropertyName("idp")]
     public IEnumerable<Guid>? IdPhotos { get; set; }
     
-    [JsonPropertyName("p")]
-    public IEnumerable<PhotoDAO>? Photos {get;set;}
+
+
 }

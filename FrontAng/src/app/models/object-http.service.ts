@@ -59,10 +59,11 @@ export class ObjectHttpService implements objectService {
         var requete = this.httpClient.get(`http://localhost:5088/api/Object/${id.toString()}`);
         var promesse = lastValueFrom(requete);
 
-        var dto = await promesse as { id: string, l: string, d: string, p: any[] };
+        var dto = await promesse as { id: string, l: string, d: string, idp: string[] };
 
         var resultat = new Object(dto.l);
         resultat.description = dto.d;
+        resultat.photos=dto.idp;
         // resultat.photos = dto.p.map(photo => photo.path);
         return resultat;
 

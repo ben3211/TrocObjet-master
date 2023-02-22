@@ -44,14 +44,17 @@ export class Object {
     }
     //#endregion
 
+
+
+    
     //#region Photo
-    // private _photos: Photo[] = [];
-    // public get photos() {
-    //     return this._photos;
-    // }
-    // public set photos(v: Photo[]) {
-    //     this._photos = v;
-    // }
+    private _photos: string[] = [];
+    public get photos() {
+        return this._photos;
+    }
+    public set photos(v: string[]) {
+        this._photos = v;
+    }
     //#endregion
 }
 

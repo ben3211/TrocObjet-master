@@ -4,7 +4,9 @@ using Microsoft.EntityFrameworkCore;
 
 var configMapper = new MapperConfiguration(options => {
     options.CreateMap<AppUserDAO, UserModel>().ReverseMap();
-    options.CreateMap<ObjectDAO, ObjectModel>().ReverseMap();
+    options.CreateMap<ObjectDAO, ObjectModel>()
+    .ForMember(c=>c.IdPhotos, options=>options.MapFrom(c=>c.Photos.Select(c=>c.IdPhoto).ToArray()))
+    .ReverseMap();
 });
 
 var mapper = configMapper.CreateMapper();

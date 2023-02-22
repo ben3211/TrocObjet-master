@@ -39,4 +39,20 @@
         <button class="btn btn-warning">Modifier</button>
         <!-- [disabled]="formModel.invalid || formModel.pristine" -->
     </form>
+
+
+
+    <form method="post" ngNoForm  enctype="multipart/form-data" action="http://localhost:5088/api/Object/{{idObject}}/Photo" >
+        <div class="form-group">
+            <label >Affiche</label>
+            <input name="files" type="file" class="form-control">
+        </div>
+        <div class="form-group">
+            <label >Commentaire</label>
+            <input name="commentaire" type="text" class="form-control">
+        </div>
+        <div class="form-group">
+            <button class="btn btn-warning">Envoyer</button>
+        </div>
+    </form>
 </div>

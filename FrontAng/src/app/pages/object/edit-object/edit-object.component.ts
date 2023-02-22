@@ -76,5 +76,8 @@ export class EditObjectComponent implements OnInit {
       this.errorMessage = "Le métier ne permet pas d'éditer l'objet";
     }
   }
+
+  
+
 }
 

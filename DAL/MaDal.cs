@@ -149,13 +149,13 @@ public class MaDal : IdentityDbContext<AccountDAO, RoleDAO, Guid>
 
         modelBuilder.Entity<ObjectDAO>().HasData(new List<ObjectDAO>() { o1, o2, o3, o4 , o5 , o6 , o7 ,o8 ,o9});
 
-        var p1 = new PhotoDAO(){IdObject = o1.IdObject, Path = "https://images.unsplash.com/photo-1599914466149-1b958674b7ba?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8c2hvdmVsfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60"};
-        var p2 = new PhotoDAO(){IdObject = o1.IdObject, Path = "https://images.unsplash.com/photo-1596277922657-f80257171aec?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8c2hvdmVsfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60"};
-        var p3 = new PhotoDAO(){IdObject = o1.IdObject, Path = "https://images.unsplash.com/photo-1633859118812-a5abc2ff4de4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fHNob3ZlbHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=600&q=60"};
-        var p4 = new PhotoDAO(){IdObject = o4.IdObject, Path = "https://images.unsplash.com/photo-1585483266684-b2f19ff1ba1d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cGlvY2hlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60"};
-        var p5 = new PhotoDAO(){IdObject = o5.IdObject, Path = "https://plus.unsplash.com/premium_photo-1661963687013-36b88a78062e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTl8fGNlbWVudCUyMG1peGVyfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60"};
-        var p6 = new PhotoDAO(){IdObject = o5.IdObject, Path = "https://plus.unsplash.com/premium_photo-1674927125657-e8782933d009?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8Y2VtZW50JTIwbWl4ZXJ8ZW58MHx8MHx8&auto=format&fit=crop&w=600&q=60"};
-        modelBuilder.Entity<PhotoDAO>().HasData(new List<PhotoDAO>(){p1,p2,p3,p4,p5,p6});
+        // var p1 = new PhotoDAO(){IdObject = o1.IdObject,};
+        // var p2 = new PhotoDAO(){IdObject = o1.IdObject, Path = "https://images.unsplash.com/photo-1596277922657-f80257171aec?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8c2hvdmVsfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60"};
+        // var p3 = new PhotoDAO(){IdObject = o1.IdObject, Path = "https://images.unsplash.com/photo-1633859118812-a5abc2ff4de4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fHNob3ZlbHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=600&q=60"};
+        // var p4 = new PhotoDAO(){IdObject = o4.IdObject, Path = "https://images.unsplash.com/photo-1585483266684-b2f19ff1ba1d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cGlvY2hlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60"};
+        // var p5 = new PhotoDAO(){IdObject = o5.IdObject, Path = "https://plus.unsplash.com/premium_photo-1661963687013-36b88a78062e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTl8fGNlbWVudCUyMG1peGVyfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60"};
+        // var p6 = new PhotoDAO(){IdObject = o5.IdObject, Path = "https://plus.unsplash.com/premium_photo-1674927125657-e8782933d009?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8Y2VtZW50JTIwbWl4ZXJ8ZW58MHx8MHx8&auto=format&fit=crop&w=600&q=60"};
+        // modelBuilder.Entity<PhotoDAO>().HasData(new List<PhotoDAO>(){p1,p2,p3,p4,p5,p6});
 
         if (this.seedData != null)
         {

@@ -26,10 +26,10 @@ public class ObjectController : Controller
         return View(objectModels);
     }
 
-    // GET /Object/Details/28032569-2bf4-48ad-9ea6-809c68b2a4e9
+    // GET /Object/Details/F7C8F7E3-16CA-423C-AD29-01C6FE697F65
     public IActionResult Details(Guid id)
     {
-        var obj = db.Objects.Include(c=>c.Owner).FirstOrDefault(c=>c.IdObject == id);
+        var obj = db.Objects.Include(c=>c.Owner).Include(c=>c.Photos).FirstOrDefault(c=>c.IdObject == id);
 
              
         // var obj = db.Objects.Find(id);
