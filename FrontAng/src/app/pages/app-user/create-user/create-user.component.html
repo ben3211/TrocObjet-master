@@ -1,0 +1,23 @@
+<h3 pageTitle>Création d'utilisateur</h3>
+<div *ngIf="errorMessage" class="alert alert-danger">{{errorMessage}}</div>
+
+<form #formModel="ngForm" (ngSubmit)="createUser()">
+    <div class="form-group">
+        <label>{{firstnameModel.name | titlecase}}</label>
+        <input class="form-control" #firstnameModel="ngModel" type="text" [(ngModel)]="editValue.firstName" name="Firstname">
+    </div>
+    <div class="form-group">
+        <label>{{lastnameModel.name | titlecase}}</label>
+        <input class="form-control" #lastnameModel="ngModel" type="text" [(ngModel)]="editValue.lastName" name="Lastname">
+    </div>
+    <div class="form-group">
+        <label>{{phonenumberModel.name | titlecase}}</label>
+        <input class="form-control" #phonenumberModel="ngModel" type="text" [(ngModel)]="editValue.phoneNumber"
+            name="Phone Number">
+        <div class="form-group">
+            <label>{{cityModel.name | titlecase}}</label>
+            <input class="form-control" #cityModel="ngModel" type="text" [(ngModel)]="editValue.city" name="City">
+        </div>
+    </div>
+    <button class="btn btn-warning">Créer</button>
+</form>

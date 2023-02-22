@@ -1,0 +1,13 @@
+<h3>Liste des utilisateurs</h3>
+
+<div class="mb-3">
+    <label class="form-label">Recherche</label>
+    <input class="form-control" #searchText>
+</div>
+<div class="mb-3">
+    <button class="btn btn-primary" (click)="rechercherUser(searchText.value)">Rechercher</button>
+    <button class="btn btn-secondary" routerLink="/create-user" >Création</button>
+</div>
+
+<app-list-search-result *ngIf="results" (searchResultClick)="showUser($event)"
+  [searchResults]="results"></app-list-search-result>

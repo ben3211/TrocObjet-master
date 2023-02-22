@@ -1,4 +1,5 @@
 using AutoMapper;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -10,11 +11,13 @@ public class UserController : Controller
 {
     private readonly MaDal db;
     private readonly IMapper mapper;
+    private readonly UserManager<AccountDAO> userManager;
 
-    public UserController(MaDal db, IMapper mapper)
+    public UserController(MaDal db, IMapper mapper, UserManager<AccountDAO> userManager)
     {
         this.db = db;
         this.mapper = mapper;
+        this.userManager = userManager;
     }
 
     //Get /api/user
@@ -53,9 +56,12 @@ public class UserController : Controller
             var messagesErreur = ModelState.SelectMany(c => c.Value.Errors).Select(c => c.ErrorMessage).ToArray();
             return BadRequest();
         }
+         var ac1 = new AccountDAO() { UserName = postUser.LastName };
+        await  this.userManager.CreateAsync(ac1,password:"kikoo");
+
         var dao = mapper.Map<AppUserDAO>(postUser);
         //////////////////////////////////////////////////////////////////////////// A changer 
-        dao.IdUser = Guid.Parse("3542B7FA-DD8B-4930-B13B-3ED8ECC63FBA"); // Mis en attendant l'authentification
+        dao.IdUser =ac1.Id; // Mis en attendant l'authentification
         ////////////////////////////////////////////////////////////////////////////
         db.AppUsers.Add(dao);
         await db.SaveChangesAsync();

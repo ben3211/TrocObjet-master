@@ -1,0 +1,21 @@
+<div *ngIf="user">
+    <h3>User : {{user.firstName}}</h3>
+    <div class="form-group">
+        <label class="form-label">Nom de l'utilisateur</label>
+        <div class="form-control">{{user.lastName}}</div>
+    </div>
+    <div class="form-group">
+        <label class="form-label">Numéro de téléphone</label>
+        <div class="form-control">{{user.phoneNumber}}</div>
+    </div>
+    <div class="form-group">
+        <label class="form-label">Ville</label>
+        <div class="form-control">{{user.city}}</div>
+    </div>
+
+
+    <button (click)="deleteItemAsync()">Supprimer</button>
+    <button (click)="editPage()">Modifier</button>
+    
+    <!-- <img *ngFor="let idPhoto of user.photos" src="http://localhost:5088/api/object/photo/{{idPhoto}}"/> -->
+</div>
