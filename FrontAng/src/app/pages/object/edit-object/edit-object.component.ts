@@ -38,15 +38,36 @@ export class EditObjectComponent implements OnInit {
     });
   }
 
+  // async updateObject() {
+  //   try {
+  //     // Tentative de modification des valeurs de l'object
+  //     this.object!.label = this.editValue?.label!;
+  //     this.object!.description = this.editValue?.description!;
+  //     this.object!.estimatedPrice = this.editValue?.estimatedPrice!;
+  //     try {
+  //       // Tentative de sauvegarde
+  //       var id = await this.objectService.updateItemAsync(this.idObject!, this.object!);
+  //       this.router.navigateByUrl("/object");
+  //     } catch (error) {
+  //       this.errorMessage = "L'objet ne peut être sauvegardé maintenant";
+  //     }
+  //   } catch (error) {
+  //     this.errorMessage = "Le métier ne permet pas d'éditer l'objet";
+  //   }
+  // }
+
+
   async updateObject() {
     try {
-      // Tentative de modification des valeurs de l'object
-      this.object!.label = this.editValue?.label!;
-      this.object!.description = this.editValue?.description!;
-      this.object!.estimatedPrice = this.editValue?.estimatedPrice!;
+      const updatedObject = new Object(
+        this.editValue?.label!,
+        this.editValue?.description!,
+        this.editValue?.estimatedPrice!
+      );
+  
       try {
         // Tentative de sauvegarde
-        var id = await this.objectService.updateItemAsync(this.idObject!, this.object!);
+        await this.objectService.updateItemAsync(this.idObject!, updatedObject);
         this.router.navigateByUrl("/object");
       } catch (error) {
         this.errorMessage = "L'objet ne peut être sauvegardé maintenant";

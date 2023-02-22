@@ -1,6 +1,8 @@
 export class Object {
-    constructor(label: string) {
-        this.label=label;
+    constructor(label?: string, description?: string, estimatedPrice?: number) {
+      this.label = label || '';
+      this.description = description || '';
+      this.estimatedPrice = estimatedPrice || 0;
     }
 
     //#region label
@@ -43,19 +45,19 @@ export class Object {
     //#endregion
 
     //#region Photo
-    private _photos: Photo[] = [];
-    public get photos() {
-        return this._photos;
-    }
-    public set photos(v: Photo[]) {
-        this._photos = v;
-    }
+    // private _photos: Photo[] = [];
+    // public get photos() {
+    //     return this._photos;
+    // }
+    // public set photos(v: Photo[]) {
+    //     this._photos = v;
+    // }
     //#endregion
 }
 
-export class Photo {
-    public path: string | undefined;
-    constructor(path: string) {
-        this.path = path;
-      }
-}
+// export class Photo {
+//     public path: string | undefined;
+//     constructor(path: string) {
+//         this.path = path;
+//       }
+// }

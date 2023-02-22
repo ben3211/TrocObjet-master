@@ -27,7 +27,7 @@ public class ObjectController : Controller
             searchText = "";
         }
         var daos = db.Objects.Where(c => c.Label.Contains(searchText))
-                    .Include(c=>c.Photos).ToArray();
+                    .ToArray();
         return daos.Select(dao => new SearchResult()
         {
             Id = dao.IdObject,
@@ -39,19 +39,22 @@ public class ObjectController : Controller
 
     // GET api/object/ "guid"
     [HttpGet("{id:guid}")]
-    public object GetObject(Guid id) {
+    public object GetObject(Guid id)
+    {
         // var dao = db.Objects.Find(id);
-        var dao = db.Objects.Include(c => c.Photos).FirstOrDefault(c => c.IdObject == id);
-        var model=mapper.Map<ObjectModel>(dao);
+        var dao = db.Objects.FirstOrDefault(c => c.IdObject == id);
+        var model = mapper.Map<ObjectModel>(dao);
         //model.Photos = dao.Photos?.Select(p => new PhotoDAO { Path = p.Path }).ToList();
         return model;
     }
 
     // POST : http://localhost:5088/api/object
     [HttpPost]
-    public async Task<object> PostObject([FromBody]ObjectModel postObject){
-        if(!ModelState.IsValid){
-            var messagesErreur = ModelState.SelectMany(c=>c.Value.Errors).Select(c=>c.ErrorMessage).ToArray();
+    public async Task<object> PostObject([FromBody] ObjectModel postObject)
+    {
+        if (!ModelState.IsValid)
+        {
+            var messagesErreur = ModelState.SelectMany(c => c.Value.Errors).Select(c => c.ErrorMessage).ToArray();
             return BadRequest();
         }
         var dao = mapper.Map<ObjectDAO>(postObject);
@@ -64,28 +67,78 @@ public class ObjectController : Controller
 
     // DELETE :  http://localhost:5088/api/object/id
     [HttpDelete("{id:guid}")]
-    public async Task<object> DeleteObject(Guid id){
+    public async Task<object> DeleteObject(Guid id)
+    {
         var dao = db.Objects.Find(id);
-        if (dao == null) {
+        if (dao == null)
+        {
             return NotFound();
         }
         db.Objects.Remove(dao);
         await db.SaveChangesAsync();
-        return Ok (true);
+        return Ok(true);
     }
 
     // PUT: api/object/{id}
+    // [HttpPut("{id:guid}")]
+    // public async Task<object> PutObject(Guid id, [FromBody]ObjectModel putObject) {
+    //          if(!ModelState.IsValid){
+    //         var messagesErreur = ModelState.SelectMany(c=>c.Value.Errors).Select(c=>c.ErrorMessage).ToArray();
+    //         return BadRequest();
+    //     }
+    /////////////////////// crétation d'une nouvelle instence donc nouveau guig au lieu d'update!!!!!!!!!!!
+    //     var dao = mapper.Map<ObjectDAO>(putObject);
+    /////////////////////////////////////////////
+    //     dao.IdOwner = Guid.Parse("07C137A3-4D46-432B-BCE3-11F6D8761372");// Mis en attendant l'authentification
+    //     db.Objects.Add(dao);
+    //     await db.SaveChangesAsync();
+    //     return Ok(true);
+    // }
+
+    // PUT: api/object/{id}
     [HttpPut("{id:guid}")]
-    public async Task<object> PutObject(Guid id, [FromBody]ObjectModel putObject) {
-             if(!ModelState.IsValid){
-            var messagesErreur = ModelState.SelectMany(c=>c.Value.Errors).Select(c=>c.ErrorMessage).ToArray();
-            return BadRequest();
+    public async Task<IActionResult> PutObject(Guid id, [FromBody] ObjectModel putObject)
+    {
+        if (!ModelState.IsValid)
+        {
+            return BadRequest(ModelState);
         }
-        var dao = mapper.Map<ObjectDAO>(putObject);
-        dao.IdOwner = Guid.Parse("07C137A3-4D46-432B-BCE3-11F6D8761372");// Mis en attendant l'authentification
-        db.Objects.Add(dao);
-        await db.SaveChangesAsync();
+
+        // On recherche l'objet avec l'ID dans la DB
+        var existingObject = await db.Objects.FindAsync(id);
+        if (existingObject == null)
+        {
+            return NotFound();
+        }
+
+        // On met a jour l'objet existant avec les valeur du putObject
+        existingObject.Label = putObject.Label;
+        existingObject.Description = putObject.Description;
+        existingObject.EstimatedPrice = putObject.EstimatedPrice;
+        // existingObject.Photos = mapper.Map<List<PhotoDAO>>(putObject.Photos);
+
+        try
+        {
+            await db.SaveChangesAsync();
+        }
+        catch (DbUpdateConcurrencyException)
+        {
+            if (!ObjectExists(id))
+            {
+                return NotFound();
+            }
+            else
+            {
+                throw;
+            }
+        }
+
         return Ok(true);
-        
+    }
+
+    // Regarde si un object avec l'ID donné éxiste déja dans la DB
+    private bool ObjectExists(Guid id)
+    {
+        return db.Objects.Any(e => e.IdObject == id);
     }
 }

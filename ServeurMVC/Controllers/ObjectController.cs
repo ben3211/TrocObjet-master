@@ -29,7 +29,7 @@ public class ObjectController : Controller
     // GET /Object/Details/28032569-2bf4-48ad-9ea6-809c68b2a4e9
     public IActionResult Details(Guid id)
     {
-        var obj = db.Objects.Include(c=>c.Photos).Include(c=>c.Owner).FirstOrDefault(c=>c.IdObject == id);
+        var obj = db.Objects.Include(c=>c.Owner).FirstOrDefault(c=>c.IdObject == id);
 
              
         // var obj = db.Objects.Find(id);

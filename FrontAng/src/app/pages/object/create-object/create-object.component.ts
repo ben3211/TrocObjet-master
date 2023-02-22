@@ -35,7 +35,7 @@ export class CreateObjectComponent implements OnInit {
       var o = new Object(this.editValue.label);
       o.description = this.editValue.description;
       o.estimatedPrice= +this.editValue.estimatedPrice;
-      o.photos=this.editValue.photoUrl;
+      // o.photos=this.editValue.photoUrl;
       // sauvegarde du l'object
       try {
         var id=await this.objectService.saveItemAsync(o);

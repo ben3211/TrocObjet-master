@@ -41,18 +41,17 @@ export class ObjectHttpService implements objectService {
         // await this.httpClient.delete(`http://localhost:5088/api/Object/${id.toString()}`).toPromise();
     }
 
-    updateItemAsync(id: Guid, item: Object): Promise<void> {
+    async updateItemAsync(id: Guid, item: Object) {
         var dto = {
             "id": id.toString(),
             "l": item.label,
             "d": item.description,
             "ep": item.estimatedPrice
         };
-        var o = this.httpClient.put(`http://localhost:5088/api/Object/${id.toString()}`, dto);
-        if (!o) {
-            return Promise.reject(new Error("Objet non trouvé"));
-        };
-        return Promise.resolve();
+        var requete = this.httpClient.put(`http://localhost:5088/api/Object/${id.toString()}`, dto);
+        var promesse=lastValueFrom(requete);
+        var resultat=await promesse;
+
     }
 
 
@@ -64,7 +63,7 @@ export class ObjectHttpService implements objectService {
 
         var resultat = new Object(dto.l);
         resultat.description = dto.d;
-        resultat.photos = dto.p.map(photo => photo.path);
+        // resultat.photos = dto.p.map(photo => photo.path);
         return resultat;
 
     }
