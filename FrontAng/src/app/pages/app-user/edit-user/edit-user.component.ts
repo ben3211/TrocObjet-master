@@ -52,7 +52,7 @@ export class EditUserComponent {
       try {
         // Tentative de sauvegarde
         await this.userService.updateItemAsync(this.idUser!, updatedObject);
-        this.router.navigateByUrl("/object");
+        this.router.navigateByUrl("/user");
       } catch (error) {
         this.errorMessage = "L'objet ne peut être sauvegardé maintenant";
       }

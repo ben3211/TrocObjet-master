@@ -21,6 +21,7 @@
     "angular": "^1.6.10",
     "bootstrap": "^5.2.3",
     "guid-typescript": "^1.0.9",
+    "ngx-bootstrap": "^6.2.0",
     "rxjs": "~7.5.0",
     "tslib": "^2.5.0",
     "zone.js": "~0.12.0"

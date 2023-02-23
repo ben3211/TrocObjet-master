@@ -170,7 +170,7 @@ public class ObjectController : Controller
         }
         // Redirection vers le details
         // return RedirectToAction("Details", new{ id=id});
-        return Redirect("http://localhost:4200/details-object/" + id);
+        return Redirect("http://localhost:4200/object/");
     }
 
     // GET : /Object/Photo/e5885733-81b9-4f51-aa4e-22ef6c02a228

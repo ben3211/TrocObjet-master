@@ -16,6 +16,8 @@ import { DetailsUserComponent } from './pages/app-user/details-user/details-user
 import { CreateUserComponent } from './pages/app-user/create-user/create-user.component';
 import { EditUserComponent } from './pages/app-user/edit-user/edit-user.component';
 import { ListUserComponent } from './pages/app-user/list-user/list-user.component';
+import { CarouselModule } from 'ngx-bootstrap/carousel';
+ 
 
 
 @NgModule({
@@ -30,12 +32,14 @@ import { ListUserComponent } from './pages/app-user/list-user/list-user.componen
     CreateUserComponent,
     EditUserComponent,
     ListUserComponent
+    
   ],
   imports: [
     FormsModule,
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    CarouselModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

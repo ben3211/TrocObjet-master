@@ -1,16 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, NgModule, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Guid } from 'guid-typescript';
 import { ObjectHttpService } from 'src/app/models/object-http.service';
 import { Object } from 'src/app/models/object';
 import { SearchResult } from 'src/app/models/search-result';
 
+
 @Component({
   selector: 'app-details-object',
   templateUrl: './details-object.component.html',
   styleUrls: ['./details-object.component.scss']
 })
+
+
 export class DetailsObjectComponent implements OnInit {
+  
   
   constructor(private objectService:ObjectHttpService , private activatedRoute:ActivatedRoute, private router:Router) {
     
