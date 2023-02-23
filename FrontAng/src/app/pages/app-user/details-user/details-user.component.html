@@ -16,8 +16,8 @@
 <div>
 
 
-    <button (click)="deleteItemAsync()">Supprimer</button>
-    <button (click)="editPage()">Modifier</button>
+    <button class="btn btn-secondary" (click)="deleteItemAsync()">Supprimer</button>
+    <button class="btn btn-secondary" (click)="editPage()">Modifier</button>
     <div *ngFor="let obj of objects" class="card" style="width: 18rem;">
 
         <img *ngIf="obj.photos.length>0" src="http://localhost:5088/api/object/photo/{{obj.photos[0]}}" class="card-img-top" alt="...">
