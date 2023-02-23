@@ -6,10 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'FrontAng';
-
   showMenu=false;
   toogle(){
     this.showMenu=!this.showMenu;
   }
+  title = 'FrontAng';
 }
+
