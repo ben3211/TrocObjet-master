@@ -26,10 +26,10 @@
         <button class="btn btn-secondary" (click)="editPage()">Modifier</button>
     </div>
 
-
-    <carousel>
-      <slide *ngFor="let idPhoto of object.photos" >
-        <img src="http://localhost:5088/api/object/photo/{{idPhoto}} "alt="first slide" style="display: block; width: 100%;">
+    
+    <carousel style="display:block" >
+      <slide *ngFor="let idPhoto of object.photos"  >
+        <img src="http://localhost:5088/api/object/photo/{{idPhoto}}" alt="first slide" style="display:block; max-width: 200px;">
       </slide>
       
     </carousel>
