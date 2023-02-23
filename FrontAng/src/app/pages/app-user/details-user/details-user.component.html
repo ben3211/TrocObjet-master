@@ -12,10 +12,20 @@
         <label class="form-label">Ville</label>
         <div class="form-control">{{user.city}}</div>
     </div>
+</div>
+<div>
 
 
     <button (click)="deleteItemAsync()">Supprimer</button>
     <button (click)="editPage()">Modifier</button>
-    
-    <!-- <img *ngFor="let idPhoto of user.photos" src="http://localhost:5088/api/object/photo/{{idPhoto}}"/> -->
+    <div *ngFor="let obj of objects" class="card" style="width: 18rem;">
+
+        <img *ngIf="obj.photos.length>0" src="http://localhost:5088/api/object/photo/{{obj.photos[0]}}" class="card-img-top" alt="...">
+        <div class="card-body" routerLink="/details-object/{{obj.id}}">
+          <h5 class="card-title">{{obj.label}}</h5>
+          <p class="card-text">{{obj.description}}</p>
+        
+        </div>
+      </div>
+
 </div>

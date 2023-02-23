@@ -6,6 +6,7 @@ import { SearchResultDTO } from "../dtos/SearchResultDTO";
 import { AppUser } from "./appUser";
 import { userService } from "./appUser.service";
 import { SearchResult } from "./search-result";
+import {Object} from '../models/object';
 
 @Injectable({
     providedIn: 'root'
@@ -58,8 +59,31 @@ export class userHttpService implements userService {
         resultat.lastName = dto.lNa;
         resultat.phoneNumber = dto.pn;
         resultat.city = dto.c;
+
+
+
         return resultat;
     }
+
+    async getObjectsAsync(id: Guid): Promise<Object[]> {
+        var requete = this.httpClient.get(`http://localhost:5088/api/User/${id.toString()}/objects`);
+        var promesse = lastValueFrom(requete);
+
+        var dtos = await promesse as { id: string, l: string, d: string, idp: string[] }[];
+
+        var resultats = dtos.map(dto => {
+            var poco = new Object();
+            poco.id = dto.id;
+            poco.label = dto.l;
+            poco.description=dto.d;
+            poco.photos=dto.idp
+            return poco;
+
+        })
+        return resultats;
+    }
+
+
     async searchItemAsync(searchText: string = "") {
         var requete = this.httpClient.get<SearchResultDTO[]>("http://localhost:5088/api/User?searchText=" + searchText);
         var promesse = lastValueFrom(requete);
@@ -72,5 +96,4 @@ export class userHttpService implements userService {
         } as SearchResult));
         return results;
     }
-
 }

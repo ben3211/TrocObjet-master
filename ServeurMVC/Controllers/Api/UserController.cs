@@ -35,7 +35,14 @@ public class UserController : Controller
             Label = dao.FirstName,
             Description = dao.LastName
         });
+    }
 
+       //Get /api/user
+    [HttpGet("{id}/objects")]
+    public IEnumerable<ObjectModel> GetObjectsForUser(Guid id)
+    {     var daos = db.Objects.Include(c=>c.Photos).Where(c => c.IdOwner == id);
+        var models=this.mapper.Map<IEnumerable<ObjectModel>>(daos);
+        return models.ToArray();
     }
 
     //GET api/user/"guid"

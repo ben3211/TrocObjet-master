@@ -4,6 +4,7 @@ export class AppUser {
         this.lastName = lastName|| '';
         this.phoneNumber = phoneNumber|| '';
         this.city = city|| '';
+       
     }
 
     //#region firstName

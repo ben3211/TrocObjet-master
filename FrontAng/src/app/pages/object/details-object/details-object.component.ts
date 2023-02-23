@@ -37,5 +37,4 @@ export class DetailsObjectComponent implements OnInit {
     let guid=Guid.parse(id);
     this.router.navigate(['/edit-object/'+guid]);
   }
-
 }
