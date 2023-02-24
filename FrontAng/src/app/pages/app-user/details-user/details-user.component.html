@@ -18,13 +18,29 @@
 
     <button class="btn btn-secondary" (click)="deleteItemAsync()">Supprimer</button>
     <button class="btn btn-secondary" (click)="editPage()">Modifier</button>
-    <div *ngFor="let obj of objects" class="card" style="width: 18rem;">
 
+
+    <div *ngFor="let obj of objects" class="card" style="width: 18rem;">
+<!-- 
+        <img *ngIf="obj.photos.length>0" src="http://localhost:5088/api/object/photo/{{obj.photos[0]}}"
+            class="card-img-top" alt="...">
+        <div class="card-body" routerLink="/details-object/{{obj.id}}">
+            <h5 class="card-title">{{obj.label}}</h5>
+            <p class="card-text">{{obj.description}}</p>
+
+        </div>
+    </div> -->
+
+
+
+    <div *ngFor="let obj of objects" class="card" style="width: 18rem;">
         <img *ngIf="obj.photos.length>0" src="http://localhost:5088/api/object/photo/{{obj.photos[0]}}" class="card-img-top" alt="...">
         <div class="card-body" routerLink="/details-object/{{obj.id}}">
           <h5 class="card-title">{{obj.label}}</h5>
           <p class="card-text">{{obj.description}}</p>
-        
+        </div>
+        <div class="card-footer bg-transparent border-0">
+          <small class="text-muted">Last updated</small>
         </div>
       </div>
 

@@ -60,7 +60,7 @@ public class ObjectController : Controller
         var dao = mapper.Map<ObjectDAO>(postObject);
         dao.IdObject = Guid.NewGuid();
         //////////////////////////////////////////////////////////////////////////// A changer 
-        dao.IdOwner = Guid.Parse("3542B7FA-DD8B-4930-B13B-3ED8ECC63FBA"); // Mis en attendant l'authentification
+        dao.IdOwner = Guid.Parse("1C282891-FF6B-482C-9A75-CBF4A14C6CF5"); // Mis en attendant l'authentification
         ////////////////////////////////////////////////////////////////////////////
         db.Objects.Add(dao);
         await db.SaveChangesAsync();

@@ -1,9 +1,37 @@
 /* You can add global styles to this file, and also import other style files */
-$primary:      rgb(31, 97, 141) ;
-$secondary: rgb(127, 179, 213 );
-$light : rgb(214, 234, 248 );
+// COLOR
+$primary: rgb(31, 97, 141);
+$secondary: rgb(127, 179, 213);
+$light : rgb(214, 234, 248);
 
 
+// CARROUSEL
+.carousel-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 400px;
+    overflow: hidden;
+}
 
+.carousel-container img {
+    max-height: 100%;
+    max-width: 100%;
+}
+
+// FOOTER
+footer {
+    position: 0;
+    margin-top: 50px;
+    bottom: 0px;
+    background-color: pink;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+}
+
+.card:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 8px 16px 0 rgba(0, 0, 0, 0.19);
+  }
 
 @import '../node_modules/bootstrap/scss/bootstrap.scss';
